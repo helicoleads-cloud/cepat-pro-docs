@@ -21,9 +21,10 @@ function ProposalGenerator() {
   const f = (k: keyof typeof data) => (v: string) => setData({ ...data, [k]: v });
 
   return (
-    <div className="grid lg:grid-cols-[420px_1fr] min-h-[calc(100vh-3.5rem)]">
+    <div className="grid lg:grid-cols-[420px_1fr] items-start">
       {/* Form */}
-      <div className="border-r border-border bg-card p-6 overflow-y-auto">
+      <div className="border-r border-border bg-card p-6 lg:sticky lg:top-14 lg:h-[calc(100vh-3.5rem)] lg:overflow-y-auto self-start">
+
         <div className="flex items-center gap-2">
           <FileText className="h-4 w-4 text-accent" />
           <h2 className="text-sm font-semibold">Proposal Generator</h2>
