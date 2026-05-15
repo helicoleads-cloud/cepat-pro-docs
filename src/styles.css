@@ -49,7 +49,7 @@
 }
 
 :root {
-  --radius: 0.875rem;
+  --radius: 0.5rem; /* 8px max for non-CTA elements */
 
   /* Brand */
   --background: oklch(0.985 0.002 95);          /* #F7F7F5 ish */
