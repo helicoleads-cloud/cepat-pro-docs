@@ -85,6 +85,8 @@ function FinancialPage() {
           ))}
         </div>
       </div>
+      </div>
     </div>
+
   );
 }
