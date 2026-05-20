@@ -1,5 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { MessageCircle, Sparkles, Send, Calendar } from "lucide-react";
+import { PageHeader } from "@/components/PageHeader";
+
 
 export const Route = createFileRoute("/_app/whatsapp")({
   component: WhatsAppPage,
