@@ -25,11 +25,11 @@ export function AppTopbar({ title }: { title?: string }) {
       </div>
       <button
         onClick={toggle}
-        aria-label={theme === "dark" ? "Switch to light" : "Switch to dark"}
-        title={theme === "dark" ? "Switch to light" : "Switch to dark"}
+        aria-label="Toggle theme"
+        title="Toggle theme"
         className="hidden sm:inline-flex items-center gap-1.5 rounded-lg border border-border bg-card px-2.5 py-1.5 text-xs font-medium hover:bg-muted transition-colors"
       >
-        {theme === "dark" ? (
+        {mounted && theme === "dark" ? (
           <>
             <Sun className="h-3.5 w-3.5 text-accent" /> Light
           </>
