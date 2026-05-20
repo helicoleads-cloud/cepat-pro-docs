@@ -61,12 +61,9 @@ function BillingPage() {
               ))}
             </ul>
             <button
-              disabled={p.current}
-              className={`mt-6 h-10 rounded-lg text-sm font-medium transition-colors ${
-                p.current
-                  ? "bg-muted text-muted-foreground cursor-default"
-                  : p.highlight
-                  ? "bg-foreground text-background hover:bg-foreground/90"
+              className={`mt-6 h-10 rounded-full text-sm font-semibold transition-colors ${
+                p.highlight
+                  ? "bg-accent text-accent-foreground hover:brightness-95"
                   : "border border-border hover:bg-muted"
               }`}
             >

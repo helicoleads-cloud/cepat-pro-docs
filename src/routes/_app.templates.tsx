@@ -5,15 +5,17 @@ export const Route = createFileRoute("/_app/templates")({
   component: TemplatesPage,
 });
 
-const cats = ["Semua", "Proposal", "Kontrak", "SOP", "HR", "Retail", "Agency", "F&B", "Startup"];
+const cats = ["Semua", "Proposal", "Kontrak", "Legal", "SOP", "Operations", "HR", "Retail", "Agency", "F&B", "Startup"];
 
 const templates = [
+  { title: "Proposal Website UMKM", cat: "Proposal", icon: FileText, used: 1540, premium: false },
+  { title: "Kontrak Freelancer", cat: "Legal", icon: FileSignature, used: 1320, premium: false },
+  { title: "SOP Customer Service", cat: "Operations", icon: ListChecks, used: 1185, premium: false },
   { title: "Proposal Agency Digital", cat: "Agency", icon: FileText, used: 1240, premium: false },
   { title: "PKS Freelance Designer", cat: "Kontrak", icon: FileSignature, used: 982, premium: false },
   { title: "SOP Onboarding F&B", cat: "F&B", icon: ListChecks, used: 642, premium: true },
   { title: "Proposal Event Organizer", cat: "Proposal", icon: FileText, used: 588, premium: false },
   { title: "Kontrak Vendor Retail", cat: "Retail", icon: FileSignature, used: 401, premium: true },
-  { title: "SOP Customer Service Klinik", cat: "SOP", icon: ListChecks, used: 376, premium: false },
   { title: "Proposal Startup Pitch Deck", cat: "Startup", icon: FileText, used: 1102, premium: true },
   { title: "Kontrak HR Karyawan Tetap", cat: "HR", icon: FileSignature, used: 754, premium: false },
 ];
