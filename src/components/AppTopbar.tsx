@@ -1,7 +1,9 @@
-import { Bell, Search, Zap } from "lucide-react";
+import { Bell, Search, Zap, Sun, Moon } from "lucide-react";
 import { Link } from "@tanstack/react-router";
+import { useTheme } from "@/hooks/use-theme";
 
 export function AppTopbar({ title }: { title?: string }) {
+  const { theme, toggle } = useTheme();
   return (
     <header className="sticky top-0 z-20 flex h-14 items-center gap-3 border-b border-border bg-background/80 backdrop-blur px-4 lg:px-6">
       {title && (
@@ -21,6 +23,22 @@ export function AppTopbar({ title }: { title?: string }) {
         <span className="text-xs font-medium">12 / 30</span>
         <span className="text-xs text-muted-foreground">AI</span>
       </div>
+      <button
+        onClick={toggle}
+        aria-label={theme === "dark" ? "Switch to light" : "Switch to dark"}
+        title={theme === "dark" ? "Switch to light" : "Switch to dark"}
+        className="hidden sm:inline-flex items-center gap-1.5 rounded-lg border border-border bg-card px-2.5 py-1.5 text-xs font-medium hover:bg-muted transition-colors"
+      >
+        {theme === "dark" ? (
+          <>
+            <Sun className="h-3.5 w-3.5 text-accent" /> Light
+          </>
+        ) : (
+          <>
+            <Moon className="h-3.5 w-3.5" /> Dark
+          </>
+        )}
+      </button>
       <button className="relative h-9 w-9 grid place-items-center rounded-lg hover:bg-muted">
         <Bell className="h-4 w-4" />
         <span className="absolute top-2 right-2 h-1.5 w-1.5 rounded-full bg-accent" />

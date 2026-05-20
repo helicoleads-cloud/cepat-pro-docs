@@ -1,10 +1,13 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { Sun, Moon } from "lucide-react";
+import { useTheme } from "@/hooks/use-theme";
 
 export const Route = createFileRoute("/_app/settings")({
   component: SettingsPage,
 });
 
 function SettingsPage() {
+  const { theme, setTheme } = useTheme();
   return (
     <div className="p-4 lg:p-8 max-w-3xl mx-auto space-y-6">
       <div>
@@ -58,6 +61,30 @@ function SettingsPage() {
               {l}
             </button>
           ))}
+        </div>
+      </Section>
+
+      <Section title="Tema Tampilan" desc="Pilih mode terang atau gelap untuk seluruh aplikasi.">
+        <div className="grid grid-cols-2 gap-3 max-w-md">
+          {([
+            { id: "dark", label: "Dark", icon: Moon, desc: "Default CEPAT PRO" },
+            { id: "light", label: "Light", icon: Sun, desc: "Mode terang" },
+          ] as const).map((opt) => {
+            const active = theme === opt.id;
+            return (
+              <button
+                key={opt.id}
+                onClick={() => setTheme(opt.id)}
+                className={`text-left p-4 rounded-lg border transition-colors ${
+                  active ? "border-accent bg-accent-soft" : "border-border hover:bg-muted"
+                }`}
+              >
+                <opt.icon className={`h-4 w-4 ${active ? "text-accent" : "text-muted-foreground"}`} />
+                <div className="mt-2 text-sm font-semibold">{opt.label}</div>
+                <div className="text-xs text-muted-foreground">{opt.desc}</div>
+              </button>
+            );
+          })}
         </div>
       </Section>
 
