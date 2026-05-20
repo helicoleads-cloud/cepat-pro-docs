@@ -1,10 +1,13 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { Sun, Moon } from "lucide-react";
+import { useTheme } from "@/hooks/use-theme";
 
 export const Route = createFileRoute("/_app/settings")({
   component: SettingsPage,
 });
 
 function SettingsPage() {
+  const { theme, setTheme } = useTheme();
   return (
     <div className="p-4 lg:p-8 max-w-3xl mx-auto space-y-6">
       <div>
