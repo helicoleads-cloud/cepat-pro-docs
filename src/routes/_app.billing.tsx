@@ -7,42 +7,21 @@ export const Route = createFileRoute("/_app/billing")({
 
 const plans = [
   {
-    name: "Free",
-    price: "Gratis",
-    desc: "Coba dulu, upgrade kalau cocok.",
-    features: ["3 dokumen / bulan", "Export PDF", "Watermark DoqAI", "Template dasar"],
-    cta: "Plan saat ini",
-    current: true,
+    name: "Starter",
+    price: "Rp99.000",
+    suffix: "/bulan",
+    desc: "Untuk freelancer yang baru mulai.",
+    features: ["100 AI Credits", "Proposal Generator", "Contract Generator"],
+    cta: "Pilih Starter",
   },
   {
     name: "Pro",
-    price: "Rp149.000",
+    price: "Rp299.000",
     suffix: "/bulan",
-    desc: "Untuk freelancer & agency.",
-    features: [
-      "Proposal & Kontrak Generator",
-      "DOCX export",
-      "Custom branding",
-      "WhatsApp Content AI",
-      "30 AI generations / bulan",
-    ],
+    desc: "Untuk agency & tim produktif.",
+    features: ["Unlimited AI", "All Templates", "Export PDF", "Priority Support"],
     cta: "Upgrade ke Pro",
     highlight: true,
-  },
-  {
-    name: "Business",
-    price: "Rp399.000",
-    suffix: "/bulan",
-    desc: "Untuk tim & UMKM serius.",
-    features: [
-      "Semua fitur Pro",
-      "Multi-user (5 seat)",
-      "SOP Generator",
-      "Shared assets",
-      "Unlimited generation",
-      "Priority WhatsApp support",
-    ],
-    cta: "Hubungi Sales",
   },
 ];
 
@@ -54,7 +33,7 @@ function BillingPage() {
         Pilih workflow yang cocok untuk bisnis Anda. Ganti kapan saja.
       </p>
 
-      <div className="mt-8 grid lg:grid-cols-3 gap-4">
+      <div className="mt-8 grid lg:grid-cols-2 gap-4 max-w-3xl">
         {plans.map((p) => (
           <div
             key={p.name}
