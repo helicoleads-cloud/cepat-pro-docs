@@ -84,14 +84,14 @@
   --input: oklch(0.93 0.003 95);
   --ring: oklch(0.52 0.08 145);
 
-  /* Sidebar stays dark for contrast (Linear/Stripe inspired) */
-  --sidebar: oklch(0.22 0.005 270);              /* #232323-ish */
-  --sidebar-foreground: oklch(0.96 0 0);         /* #F5F5F5 */
-  --sidebar-primary: oklch(0.52 0.08 145);
+  /* Sidebar — light concept, clean off-white */
+  --sidebar: oklch(0.98 0.002 95);               /* near-white sidebar */
+  --sidebar-foreground: oklch(0.2 0 0);          /* near-black text */
+  --sidebar-primary: oklch(0.52 0.08 145);       /* #588157 */
   --sidebar-primary-foreground: oklch(1 0 0);
-  --sidebar-accent: oklch(0.28 0.005 270);
-  --sidebar-accent-foreground: oklch(0.96 0 0);
-  --sidebar-border: oklch(0.3 0.005 270);
+  --sidebar-accent: oklch(0.94 0.005 145);       /* soft green-tinted hover */
+  --sidebar-accent-foreground: oklch(0.2 0 0);
+  --sidebar-border: oklch(0.92 0.003 95);
   --sidebar-ring: oklch(0.52 0.08 145);
 
   --shadow-soft: 0 1px 2px oklch(0 0 0 / 0.06), 0 1px 3px oklch(0 0 0 / 0.04);
