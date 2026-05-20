@@ -112,13 +112,13 @@ function KontrakPage() {
   };
 
   return (
-    <div className="flex flex-col h-[calc(100vh-3.5rem)]">
+    <div className="flex flex-col h-[calc(100vh-3.5rem)] min-h-0">
       {/* Sticky Top Generator Header */}
-      <header className="sticky top-0 z-20 bg-background/95 backdrop-blur border-b border-border">
+      <header className="sticky top-0 z-20 bg-background/95 backdrop-blur border-b border-border shrink-0">
         <div className="px-4 lg:px-6 py-3 flex items-center gap-3 flex-wrap">
           <div className="min-w-0">
-            <h1 className="text-base font-semibold tracking-tight leading-none">Kontrak Generator</h1>
-            <p className="text-xs text-muted-foreground mt-1">Buat kontrak profesional dalam beberapa langkah.</p>
+            <h1 className="text-base font-semibold tracking-tight leading-none">Kontrak</h1>
+            <p className="text-xs text-muted-foreground mt-1.5">Buat kontrak profesional dalam beberapa langkah.</p>
           </div>
 
           <div className="ml-auto flex items-center gap-2 flex-wrap">
@@ -151,14 +151,10 @@ function KontrakPage() {
             </button>
           ))}
         </div>
-      </header>
 
-      {/* Workspace */}
-      <div className="flex-1 min-h-0 grid lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] gap-0 lg:gap-0">
-        {/* LEFT — Setup Wizard */}
-        <div className="border-r border-border overflow-y-auto doq-scroll p-4 lg:p-6 space-y-5">
-          {/* Stepper */}
-          <ol className="flex items-center gap-2 text-[11px]">
+        {/* Horizontal stepper — scrolls on small screens */}
+        <div className="border-t border-border px-4 lg:px-6 py-2.5 overflow-x-auto doq-scroll">
+          <ol className="flex items-center gap-2 text-[11px] min-w-max">
             {[
               { n: 1, label: "Pilih Template" },
               { n: 2, label: "Isi Informasi" },
@@ -168,30 +164,36 @@ function KontrakPage() {
               const done = stepDone[s.n as 1 | 2 | 3 | 4];
               const current = step === s.n;
               return (
-                <li key={s.n} className="flex items-center gap-2">
+                <li key={s.n} className="flex items-center gap-2 shrink-0">
                   <button
                     onClick={() => setStep(s.n)}
-                    className={`flex items-center gap-1.5 h-7 px-2.5 rounded-full border transition-colors ${
+                    className={`flex items-center gap-2 h-8 px-3 rounded-full border whitespace-nowrap transition-colors ${
                       current
                         ? "border-primary text-foreground bg-accent-soft"
                         : "border-border text-muted-foreground hover:text-foreground"
                     }`}
                   >
                     <span
-                      className={`h-4 w-4 grid place-items-center rounded-full text-[10px] font-bold ${
+                      className={`h-4 w-4 shrink-0 grid place-items-center rounded-full text-[10px] font-bold ${
                         done ? "bg-primary text-primary-foreground" : "bg-muted text-foreground"
                       }`}
                     >
                       {done ? <Check className="h-2.5 w-2.5" /> : s.n}
                     </span>
-                    <span className="font-medium">{s.label}</span>
+                    <span className="text-[11px] font-medium leading-none">{s.label}</span>
                   </button>
-                  {i < arr.length - 1 && <ChevronRight className="h-3 w-3 text-muted-foreground" />}
+                  {i < arr.length - 1 && <ChevronRight className="h-3 w-3 shrink-0 text-muted-foreground" />}
                 </li>
               );
             })}
           </ol>
+        </div>
+      </header>
 
+      {/* Workspace */}
+      <div className="flex-1 min-h-0 grid lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] [grid-template-rows:minmax(0,1fr)]">
+        {/* LEFT — Setup Wizard */}
+        <div className="border-r border-border overflow-y-auto doq-scroll p-4 lg:p-6 space-y-5 min-h-0">
           {/* Step 1 — Template */}
           <section className="doq-card p-4">
             <SectionTitle n={1} title="Pilih Template" />
@@ -210,13 +212,13 @@ function KontrakPage() {
                     }`}
                   >
                     <div className="flex items-start gap-2.5">
-                      <div className={`h-8 w-8 rounded-md grid place-items-center ${selected ? "bg-primary text-primary-foreground" : "bg-muted text-foreground"}`}>
+                      <div className={`h-9 w-9 aspect-square shrink-0 rounded-md grid place-items-center ${selected ? "bg-primary text-primary-foreground" : "bg-muted text-foreground"}`}>
                         <t.icon className="h-4 w-4" />
                       </div>
-                      <div className="min-w-0">
+                      <div className="min-w-0 flex-1">
                         <div className="flex items-center gap-1.5">
                           <h3 className="text-xs font-semibold truncate">{t.name}</h3>
-                          {selected && <Check className="h-3 w-3 text-primary" />}
+                          {selected && <Check className="h-3 w-3 shrink-0 text-primary" />}
                         </div>
                         <p className="text-[10px] uppercase tracking-wider text-muted-foreground mt-0.5">{t.category}</p>
                         <p className="text-[11px] text-muted-foreground mt-1 line-clamp-2">{t.purpose}</p>
