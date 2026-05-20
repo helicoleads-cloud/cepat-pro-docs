@@ -156,8 +156,9 @@ function SopPage() {
       <header className="sticky top-0 z-20 bg-background/95 backdrop-blur border-b border-border">
         <div className="px-4 lg:px-6 py-3 flex items-center gap-3 flex-wrap">
           <div className="min-w-0">
-            <h1 className="text-base font-semibold tracking-tight leading-none">SOP Workspace</h1>
-            <p className="text-xs text-muted-foreground mt-1">Kelola dan jalankan SOP secara cepat dan terstruktur.</p>
+            <h1 className="text-base font-semibold tracking-tight leading-none">SOP</h1>
+            <p className="text-xs text-muted-foreground mt-1.5">Kelola dan jalankan SOP secara cepat dan terstruktur.</p>
+
           </div>
 
           <div className="flex-1 max-w-md mx-auto relative">

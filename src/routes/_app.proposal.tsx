@@ -1,6 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { Sparkles, Wand2, Download, Save, FileText, Plus } from "lucide-react";
+import { PageHeader } from "@/components/PageHeader";
+
 
 export const Route = createFileRoute("/_app/proposal")({
   component: ProposalGenerator,
@@ -34,18 +36,18 @@ function ProposalGenerator() {
 
   return (
     <div>
-      {/* Proposal list */}
-      <div className="border-b border-border bg-card/40 p-4 lg:px-8 lg:py-5">
-        <div className="flex items-center justify-between gap-3 flex-wrap">
-          <div>
-            <h1 className="text-lg font-bold tracking-tight">Proposal</h1>
-            <p className="text-xs text-muted-foreground">3 proposal terbaru</p>
-          </div>
-          <button className="inline-flex items-center gap-2 rounded-full bg-accent text-accent-foreground px-4 py-2 text-xs font-semibold hover:brightness-95">
+      <PageHeader
+        title="Proposal"
+        subtitle="3 proposal terbaru"
+        actions={
+          <button className="inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-4 h-9 text-xs font-semibold hover:brightness-95">
             <Plus className="h-3.5 w-3.5" /> Proposal Baru
           </button>
-        </div>
-        <div className="mt-4 grid grid-cols-1 sm:grid-cols-3 gap-3">
+        }
+      />
+
+      <div className="p-4 lg:px-8 lg:py-5 border-b border-border bg-card/40">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
           {proposalList.map((p) => (
             <div key={p.client} className="doq-card p-4">
               <div className="flex items-center justify-between">
@@ -58,6 +60,7 @@ function ProposalGenerator() {
           ))}
         </div>
       </div>
+
 
       <div className="grid lg:grid-cols-[420px_1fr] items-start">
         {/* Form */}
