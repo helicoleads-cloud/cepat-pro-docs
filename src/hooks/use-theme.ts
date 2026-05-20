@@ -19,17 +19,25 @@ function applyTheme(t: Theme) {
 }
 
 export function useTheme() {
-  const [theme, setThemeState] = useState<Theme>(getInitial);
+  const [theme, setThemeState] = useState<Theme>("light");
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setThemeState(getInitial());
+    setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (!mounted) return;
     applyTheme(theme);
     try {
       window.localStorage.setItem(STORAGE_KEY, theme);
     } catch {}
-  }, [theme]);
+  }, [theme, mounted]);
 
   return {
     theme,
+    mounted,
     setTheme: setThemeState,
     toggle: () => setThemeState((t) => (t === "dark" ? "light" : "dark")),
   };
