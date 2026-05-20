@@ -1,5 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { TrendingUp, ArrowUpRight, ArrowDownRight } from "lucide-react";
+import { PageHeader } from "@/components/PageHeader";
+
 
 export const Route = createFileRoute("/_app/financial")({
   component: FinancialPage,
