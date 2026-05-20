@@ -430,7 +430,7 @@ function KontrakPage() {
       </div>
 
       {/* Bottom Utility Bar */}
-      <div className="border-t border-border bg-card/95 backdrop-blur px-4 lg:px-6 h-12 flex items-center gap-2">
+      <div className="shrink-0 border-t border-border bg-card/95 backdrop-blur px-4 lg:px-6 h-12 flex items-center gap-2">
         <div className="flex items-center gap-1.5 text-[11px] text-muted-foreground">
           <FileText className="h-3.5 w-3.5" />
           <span className="font-medium text-foreground">{templates[active].name}</span>
