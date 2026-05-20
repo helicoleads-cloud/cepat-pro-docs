@@ -5,10 +5,10 @@ export type Theme = "dark" | "light";
 const STORAGE_KEY = "cepatpro-theme";
 
 function getInitial(): Theme {
-  if (typeof window === "undefined") return "dark";
+  if (typeof window === "undefined") return "light";
   const saved = window.localStorage.getItem(STORAGE_KEY);
   if (saved === "light" || saved === "dark") return saved;
-  return "dark";
+  return "light";
 }
 
 function applyTheme(t: Theme) {
