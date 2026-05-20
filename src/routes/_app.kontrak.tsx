@@ -324,7 +324,7 @@ function KontrakPage() {
         </div>
 
         {/* RIGHT — Live Preview */}
-        <div className="bg-surface overflow-y-auto doq-scroll p-4 lg:p-6">
+        <div className="bg-surface overflow-y-auto doq-scroll p-4 lg:p-6 min-h-0">
           <div className="flex items-center justify-between mb-3">
             <div className="flex items-center gap-2">
               <span className="relative flex h-2 w-2">
