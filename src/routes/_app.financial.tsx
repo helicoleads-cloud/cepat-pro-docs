@@ -25,13 +25,14 @@ function FinancialPage() {
   const max = Math.max(...revenue.map((r) => r.revenue));
 
   return (
-    <div className="p-4 lg:p-8 max-w-[1400px] mx-auto">
-      <div className="flex items-end justify-between gap-3 flex-wrap">
-        <div>
-          <h1 className="text-2xl font-bold tracking-tight">Financial</h1>
-          <p className="text-sm text-muted-foreground mt-1">Ringkasan revenue dan transaksi terkini.</p>
-        </div>
-      </div>
+    <div>
+      <PageHeader
+        title="Financial Narrator"
+        subtitle="Ringkasan revenue dan transaksi terkini."
+      />
+
+      <div className="p-4 lg:p-8 max-w-[1400px] mx-auto">
+
 
       {/* Revenue cards */}
       <div className="mt-6 grid grid-cols-2 lg:grid-cols-4 gap-3">
