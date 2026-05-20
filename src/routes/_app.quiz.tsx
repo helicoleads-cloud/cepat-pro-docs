@@ -6,7 +6,7 @@ export const Route = createFileRoute("/_app/quiz")({
   component: () => (
     <PagePlaceholder
       icon={ClipboardList}
-      title="Quiz Lead Funnel"
+      title="Quiz Funnel"
       subtitle="Buat kuis interaktif untuk capture lead, scoring otomatis, dan embed di website. Cocok untuk konsultan, klinik, dan agency."
       features={[
         "Multiple question types + scoring logic",
