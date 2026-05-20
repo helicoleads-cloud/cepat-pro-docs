@@ -76,10 +76,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "description", content: "AI untuk proposal, kontrak, SOP, dan konten WhatsApp. Dibuat untuk freelancer, agency, dan UMKM Indonesia." },
       { name: "author", content: "DoqAI" },
       { property: "og:title", content: "DoqAI — Dokumen Profesional dalam 3 Menit" },
-      { property: "og:description", content: "Cara tercepat terlihat profesional dan closing lebih cepat." },
+      { property: "og:description", content: "AI untuk proposal, kontrak, SOP, dan konten WhatsApp. Dibuat untuk freelancer, agency, dan UMKM Indonesia." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "DoqAI — Dokumen Profesional dalam 3 Menit" },
+      { name: "twitter:description", content: "AI untuk proposal, kontrak, SOP, dan konten WhatsApp. Dibuat untuk freelancer, agency, dan UMKM Indonesia." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/4dcc8fcc-c8bf-41fb-afc8-ce2390426cab/id-preview-dab0c74c--82000aa3-7f7e-41e2-940c-518ada7966cf.lovable.app-1779111208220.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/4dcc8fcc-c8bf-41fb-afc8-ce2390426cab/id-preview-dab0c74c--82000aa3-7f7e-41e2-940c-518ada7966cf.lovable.app-1779111208220.png" },
     ],
     links: [
       {
