@@ -94,6 +94,8 @@ function WhatsAppPage() {
           </div>
         </aside>
       </section>
+      </div>
     </div>
+
   );
 }
