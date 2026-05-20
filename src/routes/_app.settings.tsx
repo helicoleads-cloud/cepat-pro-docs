@@ -64,6 +64,30 @@ function SettingsPage() {
         </div>
       </Section>
 
+      <Section title="Tema Tampilan" desc="Pilih mode terang atau gelap untuk seluruh aplikasi.">
+        <div className="grid grid-cols-2 gap-3 max-w-md">
+          {([
+            { id: "dark", label: "Dark", icon: Moon, desc: "Default CEPAT PRO" },
+            { id: "light", label: "Light", icon: Sun, desc: "Mode terang" },
+          ] as const).map((opt) => {
+            const active = theme === opt.id;
+            return (
+              <button
+                key={opt.id}
+                onClick={() => setTheme(opt.id)}
+                className={`text-left p-4 rounded-lg border transition-colors ${
+                  active ? "border-accent bg-accent-soft" : "border-border hover:bg-muted"
+                }`}
+              >
+                <opt.icon className={`h-4 w-4 ${active ? "text-accent" : "text-muted-foreground"}`} />
+                <div className="mt-2 text-sm font-semibold">{opt.label}</div>
+                <div className="text-xs text-muted-foreground">{opt.desc}</div>
+              </button>
+            );
+          })}
+        </div>
+      </Section>
+
       <Section title="Akun" desc="Kelola akses akun.">
         <div className="flex flex-wrap gap-2">
           <Link to="/login" className="text-sm px-4 py-2 rounded-lg border border-border hover:bg-muted">Keluar</Link>
