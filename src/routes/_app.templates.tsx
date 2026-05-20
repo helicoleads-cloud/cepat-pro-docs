@@ -56,7 +56,7 @@ function TemplatesPage() {
 
       <div className="mt-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         {templates.map((t) => (
-          <Link key={t.title} to="/proposal" className="group doq-card overflow-hidden hover:border-foreground/30 hover:shadow-md transition-all">
+          <Link key={t.title} to="/proposal" className="group doq-card overflow-hidden hover:border-foreground/30 transition-all">
             <div className="aspect-[4/3] bg-muted/50 doq-grid-bg relative">
               <div className="absolute inset-4 rounded-lg bg-card border border-border p-3 flex flex-col">
                 <div className="h-2 w-12 bg-foreground rounded-full" />

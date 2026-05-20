@@ -149,6 +149,9 @@
 }
 
 @layer utilities {
+  /* Hapus semua box-shadow di seluruh aplikasi */
+  *, *::before, *::after { box-shadow: none !important; }
+
   .doq-card {
     background-color: var(--color-card);
     border: 1px solid var(--color-border);
