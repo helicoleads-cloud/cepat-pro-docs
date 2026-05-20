@@ -1,8 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import {
   FileText, FileSignature, ListChecks, MessageCircle,
-  TrendingUp, ArrowUpRight, Sparkles, Clock, CheckCircle2,
-  ArrowRight, Plus,
+  ArrowUpRight, Sparkles, CheckCircle2,
+  ArrowRight, Plus, Briefcase, ShieldCheck,
 } from "lucide-react";
 
 export const Route = createFileRoute("/_app/dashboard")({
@@ -27,14 +27,10 @@ function DashboardHome() {
 
       {/* Metrics */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
-        <Metric label="AI Usage Bulan Ini" value="12 / 30" delta="+4 minggu ini" tone="default">
-          <div className="mt-2 h-1.5 rounded-full bg-muted overflow-hidden">
-            <div className="h-full w-[40%] bg-accent rounded-full" />
-          </div>
-        </Metric>
-        <Metric label="Dokumen Dibuat" value="48" delta="+8 vs bulan lalu" tone="up" />
-        <Metric label="Template Aktif" value="14" delta="3 baru" tone="up" />
-        <Metric label="Waktu Tersimpan" value="32 jam" delta="≈ Rp 4.8jt" tone="accent" />
+        <Metric icon={FileText} label="Total Dokumen" value="128" delta="+12%" tone="up" />
+        <Metric icon={Briefcase} label="Proposal Dibuat" value="54" delta="+8%" tone="up" />
+        <Metric icon={ShieldCheck} label="Kontrak Aktif" value="21" delta="+3%" tone="up" />
+        <Metric icon={Sparkles} label="AI Credits" value="840" delta="-10%" tone="down" />
       </div>
 
       {/* Quick generate */}
@@ -123,13 +119,17 @@ function SectionHeader({ title, subtitle, inline }: { title: string; subtitle?: 
   );
 }
 
-function Metric({ label, value, delta, tone, children }: any) {
+function Metric({ icon: Icon, label, value, delta, tone, children }: any) {
   const toneClass =
     tone === "up" ? "text-success" :
+    tone === "down" ? "text-destructive" :
     tone === "accent" ? "text-accent" : "text-muted-foreground";
   return (
     <div className="doq-card p-4">
-      <p className="text-xs text-muted-foreground">{label}</p>
+      <div className="flex items-center justify-between">
+        <p className="text-xs text-muted-foreground">{label}</p>
+        {Icon && <Icon className="h-4 w-4 text-muted-foreground" />}
+      </div>
       <div className="mt-1 flex items-baseline justify-between">
         <span className="text-2xl font-bold tracking-tight">{value}</span>
       </div>
@@ -173,9 +173,7 @@ function Check({ label, done }: { label: string; done?: boolean }) {
 }
 
 const recent = [
-  { title: "Proposal Redesign Website", meta: "PT Maju Bersama · 14 hal · 2 jam lalu", icon: FileText, iconBg: "bg-accent-soft text-accent", status: "Selesai", statusClass: "bg-accent-soft text-accent" },
-  { title: "Kontrak Freelance Designer", meta: "Sarah D. · PKS · Kemarin", icon: FileSignature, iconBg: "bg-muted text-foreground", status: "Draft", statusClass: "bg-muted text-muted-foreground" },
-  { title: "SOP Onboarding Karyawan", meta: "Tim HR · 5 step · 2 hari", icon: ListChecks, iconBg: "bg-muted text-foreground", status: "Selesai", statusClass: "bg-accent-soft text-accent" },
-  { title: "Konten WhatsApp Promo Lebaran", meta: "30 hari · Generating…", icon: Clock, iconBg: "bg-warning/15 text-warning", status: "Generating", statusClass: "bg-warning/15 text-warning" },
-  { title: "Financial Narrative Q1 2026", meta: "Excel · 8 sheets · 3 hari", icon: TrendingUp, iconBg: "bg-muted text-foreground", status: "Selesai", statusClass: "bg-accent-soft text-accent" },
+  { title: "Proposal Website Klinik Gigi", meta: "2 menit lalu", icon: FileText, iconBg: "bg-accent-soft text-accent", status: "Completed", statusClass: "bg-accent-soft text-accent" },
+  { title: "Kontrak Freelance Design", meta: "15 menit lalu", icon: FileSignature, iconBg: "bg-muted text-foreground", status: "Draft", statusClass: "bg-muted text-muted-foreground" },
+  { title: "SOP Admin CS", meta: "1 jam lalu", icon: ListChecks, iconBg: "bg-muted text-foreground", status: "Generated", statusClass: "bg-accent-soft text-accent" },
 ];

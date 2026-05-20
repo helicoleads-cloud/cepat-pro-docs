@@ -12,6 +12,22 @@ function SettingsPage() {
         <p className="text-sm text-muted-foreground mt-1">Kelola profil bisnis dan preferensi akun.</p>
       </div>
 
+      <Section title="Akun Pengguna" desc="Informasi profil dan paket Anda.">
+        <div className="flex items-center gap-4">
+          <div className="h-14 w-14 rounded-full bg-accent text-accent-foreground grid place-items-center text-lg font-bold">FS</div>
+          <div className="flex-1">
+            <p className="text-sm font-semibold">Fahmi Studio</p>
+            <p className="text-xs text-muted-foreground">hello@cepatpro.id</p>
+          </div>
+          <div className="text-right">
+            <span className="inline-flex items-center gap-1 text-[10px] font-semibold px-2 py-1 rounded-full bg-accent-soft text-accent">
+              Pro Plan
+            </span>
+            <p className="mt-1 text-xs text-muted-foreground">840 credits</p>
+          </div>
+        </div>
+      </Section>
+
       <Section title="Profil Bisnis" desc="Data ini otomatis dipakai di semua dokumen yang Anda generate.">
         <div className="grid sm:grid-cols-2 gap-4">
           <Field label="Nama bisnis" defaultValue="Studio Kanvas Digital" />
