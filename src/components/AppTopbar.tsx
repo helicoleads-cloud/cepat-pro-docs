@@ -3,7 +3,7 @@ import { Link } from "@tanstack/react-router";
 import { useTheme } from "@/hooks/use-theme";
 
 export function AppTopbar({ title }: { title?: string }) {
-  const { theme, toggle } = useTheme();
+  const { theme, toggle, mounted } = useTheme();
   return (
     <header className="sticky top-0 z-20 flex h-14 items-center gap-3 border-b border-border bg-background/80 backdrop-blur px-4 lg:px-6">
       {title && (
