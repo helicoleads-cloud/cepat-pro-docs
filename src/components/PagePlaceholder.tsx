@@ -36,7 +36,7 @@ export function PagePlaceholder({
             )}
           </div>
           <div className="relative">
-            <div className="aspect-[4/3] rounded-2xl border border-border bg-card p-6 shadow-sm flex flex-col">
+            <div className="aspect-[4/3] rounded-2xl border border-border bg-card p-6 flex flex-col">
               <div className="flex items-center gap-1.5">
                 <div className="h-2 w-2 rounded-full bg-muted-foreground/30" />
                 <div className="h-2 w-2 rounded-full bg-muted-foreground/30" />

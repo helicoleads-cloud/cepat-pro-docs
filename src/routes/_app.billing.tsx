@@ -38,7 +38,7 @@ function BillingPage() {
           <div
             key={p.name}
             className={`doq-card p-6 relative flex flex-col ${
-              p.highlight ? "border-foreground shadow-lg ring-1 ring-foreground/10" : ""
+              p.highlight ? "border-foreground ring-1 ring-foreground/10" : ""
             }`}
           >
             {p.highlight && (

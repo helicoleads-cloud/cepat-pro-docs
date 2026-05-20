@@ -141,7 +141,7 @@ function Metric({ icon: Icon, label, value, delta, tone, children }: any) {
 
 function QuickCard({ to, icon: Icon, title, desc, tag }: any) {
   return (
-    <Link to={to} className="group doq-card p-4 hover:border-foreground/30 hover:shadow-md transition-all relative">
+    <Link to={to} className="group doq-card p-4 hover:border-foreground/30 transition-all relative">
       {tag && (
         <span className="absolute top-3 right-3 text-[10px] font-medium px-1.5 py-0.5 rounded-full bg-accent-soft text-accent">
           {tag}
