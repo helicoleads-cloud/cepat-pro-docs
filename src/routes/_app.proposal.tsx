@@ -1,6 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { Sparkles, Wand2, Download, Save, FileText, Plus } from "lucide-react";
+import { PageHeader } from "@/components/PageHeader";
+
 
 export const Route = createFileRoute("/_app/proposal")({
   component: ProposalGenerator,
